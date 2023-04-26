@@ -1,0 +1,139 @@
+:root {
+  --a1:#99d9df;
+  --a2:#6887d0;
+  --a3:#3d92c2;
+  --a4:#2e5d96;
+  --linkReg:#0ba5a4;
+  --linkHover:#78dde0;
+  --primary:#333;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding: 3em;
+}
+
+p {
+  margin-bottom: .75em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color:var(--linkHover) ;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: var(--linkHover);
+}
+
+.aContainer {
+  max-width: 50em;
+}
+
+.accordion {
+  position: relative;
+  background-color: #dedede;
+  color: var(--primary);
+}
+.accordion::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1em;
+  background-color: rgba(0,0,0,.2);
+  content: "";
+}
+
+.accordion:first-child {
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+}
+
+.accordion:last-child {
+  border-bottom-left-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+}
+.accordion:first-child::before {
+  border-top-left-radius: 1.5rem;
+}
+.accordion:last-child::before {
+  border-bottom-left-radius: 1.5rem;
+}
+
+.aHeader {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  
+}
+
+
+
+.aHeader button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  padding: 1.5rem 2rem;
+  border: 0;
+  text-align: left;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.fa-plus, .fa-minus {
+  width: 1rem;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.fa-plus {
+  display: block;
+}
+
+
+.fa-minus {
+  display: none;
+}
+
+.accordion.isOpen .fa-minus {
+  display: block;
+}
+
+.accordion.isOpen .fa-plus {
+  display: none;
+}
+
+.aContent {
+/* display: none; */
+  /* padding: 1.5em 3em; */
+  height: 0;
+overflow: hidden;
+/* display: none; */
+transition: height .5s ease-out;
+}
+
+.aInner {
+  padding: 1.5em 3em;
+}
+
+.isOpen .aContent {
+  /* display: block; */
+}
+
+.aContent img {
+  float: left;
+  padding-right: 1em;
+}
